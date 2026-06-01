@@ -1,7 +1,2 @@
 node_modules/
 .env
-out/
-outputs/
-dist/
-*.log
-fuente-original-analisis.txt
