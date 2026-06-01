@@ -29,7 +29,7 @@ export class AIClient {
 
   async generate(promptOrMessages) {
     const messages = this.normalizeMessages(promptOrMessages);
-    const payload = {
+    const basePayload = {
       model: this.providerConfig.model,
       messages,
       temperature: this.providerConfig.temperature,
@@ -40,7 +40,7 @@ export class AIClient {
       ? this.providerConfig.timeoutMs
       : 120000;
 
-    try {
+    const post = async (payload) => {
       const response = await axios.post(
         this.providerConfig.endpoint,
         payload,
@@ -52,9 +52,31 @@ export class AIClient {
           timeout
         }
       );
+      return response;
+    };
+
+    try {
+      const response = await post(basePayload);
 
       return this.extractContent(response.data);
     } catch (error) {
+      const message = String(error?.response?.data?.error?.message || error?.message || '');
+      const looksLikeTempMustBeOne =
+        this.provider === 'kimi' &&
+        error?.response?.status === 400 &&
+        /invalid\s+temperature/i.test(message) &&
+        /only\s+1\s+is\s+allowed/i.test(message);
+
+      if (looksLikeTempMustBeOne && basePayload.temperature !== 1) {
+        try {
+          const retryPayload = { ...basePayload, temperature: 1 };
+          const retryResponse = await post(retryPayload);
+          return this.extractContent(retryResponse.data);
+        } catch (retryError) {
+          error = retryError;
+        }
+      }
+
       let errorDetail = error.message;
       if (error.response?.status === 400) {
         errorDetail = `400 Bad Request - ${error.response?.data?.error?.message || JSON.stringify(error.response.data)}`;
