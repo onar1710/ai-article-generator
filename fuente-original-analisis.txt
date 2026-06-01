@@ -1,0 +1,240 @@
+los portátiles ASUS ROG Zephyrus G14 y G16 llegan a EE. UU. con procesadores Intel Core Ultra Series 3 y tarjetas gráficas RTX 50 Series.
+26/05/2026
+ROG Zephyrus G14 y G16
+
+PUNTOS CLAVE
+
+Potencia de última generación: Impulsada por los nuevos procesadores Intel® Core™ Ultra 9 386H combinados con las GPU para portátiles NVIDIA® GeForce RTX™ Serie 50 para un rendimiento increíble en juegos y creación de contenido.
+Máxima portabilidad: Los Zephyrus G14 y G16 siguen siendo tan portátiles como siempre gracias a un diseño de chasis ligero y de primera calidad, sin comprometer la potencia.
+Inmersión sin igual: la pantalla ROG Nebula HDR OLED, con un brillo máximo de 1100 nits y VESA DisplayHDR™ True Black 1000, ofrece una calidad de imagen estelar.
+Fremont, California, 22 de mayo de 2026 - ASUS Republic of Gamers (ROG) anunció hoy que los nuevos ROG Zephyrus G14 y Zephyrus G16 de 2026 ya están disponibles para su compra en la tienda en línea de ASUS y Best Buy. Los renovados buques insignia ultraportátiles combinan los últimos procesadores Intel® Core™ Ultra Series 3 con GPU para portátiles NVIDIA® GeForce RTX™ Serie 50 con un TGP más alto; lo que proporciona un mayor rendimiento en el mismo chasis ultraportátil. Los modelos Zephyrus renovados también cuentan con una pantalla ROG Nebula HDR OLED mejorada con un brillo HDR máximo de 1100 nits, compatibilidad con VESA DisplayHDR™ True Black 1000 y Delta E 1.
+
+Energía de última generación
+
+Tanto el Zephyrus G14 como el G16 están disponibles con el procesador Intel Core™ Ultra 9 386H de última generación. Esta familia emplea una arquitectura modular basada en bloques para ofrecer una gran flexibilidad, desde operaciones de bajo consumo hasta el máximo rendimiento que los usuarios esperan de un portátil para juegos ROG Zephyrus. Con hasta 50 TOPS de rendimiento NPU disponible, la ejecución local de tareas de IA y el potencial para flujos de trabajo de IA en juegos hacen de la familia Core Ultra Series 3 una opción perfecta para la informática moderna. El Zephyrus G14 GU405 cuenta con una GPU para portátiles NVIDIA GeForce RTX™ 5070Ti, mientras que el Zephyrus G16 GU606 cuenta con una GPU para portátiles NVIDIA GeForce RTX 5080. Con la última arquitectura NVIDIA Blackwell y funciones de software innovadoras como DLSS 4 y Frame Generation, estos portátiles están diseñados para los juegos de próxima generación.
+
+Los ROG Zephyrus G14 y G16 de 2026 llevan la gestión térmica a un nuevo nivel gracias a las funciones de refrigeración inteligente ROG, que minimizan el ruido y maximizan el rendimiento. Con un panel inferior rediseñado que ofrece ventilación mejorada y un diseño optimizado de la salida de aire, los Zephyrus G14 y G16 se mantienen frescos y silenciosos incluso bajo cargas de trabajo intensas.
+
+Portabilidad máxima
+
+El Zephyrus G14 sigue redefiniendo el concepto de portátil ultraportátil para juegos, con un chasis de aluminio mecanizado por CNC y dos elegantes colores que combinan sobriedad y estilo, ideales para jugadores y creadores que necesitan un equipo que puedan llevar a cualquier parte. Con un peso inicial de tan solo 1,5 kg (3,31 libras), el G14 es muy cómodo de transportar. Aunque ligeramente más pesado, con solo 1,85 kg (1,85 kg), el Zephyrus G16 cabe fácilmente en la mayoría de bolsos y mochilas sin resultar una carga.
+
+El color Blanco Platino de los Zephyrus G14 y G16 llamará la atención por su estilo atrevido, o los jugadores pueden optar por el modelo Gris Eclipse, más sobrio pero igualmente sofisticado. Tanto el GU405 como el GU606 cuentan con un nuevo sistema de iluminación Slash Lighting en la tapa, ahora con 35 zonas, lo que ofrece a los jugadores un mayor control sobre la personalización y las animaciones.
+
+Los ROG Zephyrus G14 y G16 de 2026 vienen equipados con conectividad de última generación. Todos estos equipos cuentan con dos puertos USB-C® compatibles con salida DisplayPort™ y suministro de energía de 100 W a través de USB o Thunderbolt™ 4, lo que proporciona una flexibilidad increíble para configurar un espacio de trabajo móvil y cargar todos los dispositivos del usuario. Todos los equipos también incluyen dos puertos USB 3.2 Gen 2 Tipo A para periféricos adicionales, un puerto HDMI® 2.1 de tamaño completo para monitores externos y un lector de tarjetas SD de tamaño completo. Con un conector de audio integrado, estos dispositivos Zephyrus están diseñados pensando en editores y creadores que necesitan llevar su oficina a todas partes. Complementados con los últimos estándares inalámbricos Bluetooth® 6.0 y WiFi 7, los Zephyrus G14 y G16 son auténticas potencias portátiles.
+
+Inmersión sin igual
+
+Los nuevos modelos Zephyrus G14 y G16 incorporan una pantalla OLED mejorada con el distintivo ROG Nebula HDR, lo que los convierte en opciones excepcionales para disfrutar de movimientos fluidos, un HDR impresionante e imágenes nítidas tanto en películas como en juegos. Las pantallas con resolución 3K/120Hz del G14 y 2.5K/240Hz del G16 ofrecen un tiempo de respuesta de 0.2 ms para una mayor nitidez en movimiento gracias a la compatibilidad con NVIDIA G-SYNC®, una cobertura del 100% del espacio de color DCI-P3, un brillo máximo de 1100 nits y compatibilidad con el exigente estándar VESA DisplayHDR™ True Black 1000. Con un Delta E 1, estos paneles están listos para usar en proyectos de vídeo que requieren una reproducción de color precisa. El cristal Corning® Gorilla® Glass con DXC, resistente a los arañazos, garantiza que la pantalla se mantenga en óptimas condiciones, ofreciendo a los usuarios una experiencia visual siempre excelente. La gama Zephyrus G14 y G16 de 2026 está diseñada para impresionar.
+
+Mientras tanto, un sistema de audio de seis altavoces ofrece un sonido rico y detallado que sumerge a los jugadores en una experiencia aún más inmersiva, y un sensor de iluminación ambiental integrado ajusta el brillo de la pantalla al entorno, manteniendo una visualización cómoda en cualquier ambiente. Tanto el Zephyrus G14 como el G16 incorporan nuestra nueva bisagra EasyLift, que permite una apertura más fluida con una sola mano, manteniendo el teclado siempre orientado hacia el usuario.
+
+DISPONIBILIDAD Y PRECIOS
+
+Los portátiles ASUS ROG Zephyrus G14 y G16 estarán disponibles para su compra a partir del 22 de mayo de 2026 en Estados Unidos a través de nuestra tienda online de ASUS y Best Buy (ver enlaces a continuación):
+Detalles de la compra
+
+Zephyrus G14 (Gris 5070Ti)
+
+Zephyrus G16 (Blanco 5070Ti)
+
+Zephyrus G16 (Blanco 5080)
+
+Precio de venta sugerido por el fabricante
+
+$3,599.99
+
+$3,699.99
+
+$4,799.99
+
+Tienda online de ASUS
+
+Enlace de compra
+
+Enlace de compra
+
+Enlace de compra
+
+
+
+
+Detalles de la compra
+
+Zephyrus G14 (Blanco 5070Ti)
+
+Zephyrus G16 (Gris 5070Ti)
+
+Zephyrus G16 (Gris 5080)
+
+Mejor Compra*
+
+Enlace de compra
+
+Enlace de compra
+
+Enlace de compra
+
+*Los precios y la disponibilidad los establece el vendedor y están sujetos a cambios. Consulte la información del vendedor para conocer los precios actuales.
+
+CONTACTOS DE PRENSA
+
+Equipo de relaciones públicas de ASUS en EE. UU.: asuspr_usa@asus.com
+NOTAS PARA LOS EDITORES
+
+Sala de prensa de ASUS USA: https://www.asus.com/us/news/
+Facebook de ASUS USA: https://www.facebook.com/asus.n.america/
+ASUS USA X (Twitter): https://twitter.com/ASUSUSA
+PRESUPUESTO
+ASUS ROG Zephyrus G14 ( GU405)
+
+Sistema operativo
+
+Hasta Windows 11 Pro o Windows 11 Home, varía según el modelo.
+
+Mostrar
+
+ROG Nebula HDR, 14”, 2880x1800 OLED, 16:10, 3K 120 Hz, DCI-P3 100 %, brillo máximo de 1100 nits, compatible con VESA DisplayHDR ™ True Black 1000, Delta E 1, 0,2 ms
+
+UPC
+
+Procesador Intel® Core ™ Ultra 9 386H
+
+GPU
+
+Hasta una GPU para portátil NVIDIA® GeForce RTX ™ 5070Ti
+
+Memoria
+
+Hasta 32 GB de memoria LPDDR5X-8533MT/s integrada (memoria de doble canal).
+
+Almacenamiento
+
+1 ranura M.2, SSD PCIe® Gen4x4 , hasta 1 TBincluido
+
+Puertos de E/S
+
+1 puerto USB-C® , compatible con Thunderbolt ™ 4, DP 2.1+ PD3.0 (100W)
+
+1 puerto USB-C® compatible con USB 3.2 Gen 2 DP2.1+PD3.0 (100W)
+
+2 puertos USB 3.2 Gen 2 Tipo A
+
+1 x HDMI ® 2.1 FRL
+
+1 lector de tarjetas SD (UHS-II, 312 MB/s) de tamaño completo
+
+1 conector combinado de audio
+
+1 x Conector rectangular
+
+Teclado y panel táctil
+
+Distancia de recorrido RGB de 1 zona: 1,7 mm
+
+Inalámbrico
+
+WiFi 7, Bluetooth ® 6.0
+
+Audio
+
+6 altavoces: 2 tweeters , 4 woofers
+
+Batería
+
+73Wh
+
+Adaptador de CA
+
+250 W
+
+Chasis
+
+Aluminio mecanizado por CNC
+
+Dimensión
+
+12,24 × 8,66 × 0,63–0,72 pulgadas ( 31,1 x 22,0 x 1,59~1,83 cm)
+
+Peso
+
+3,31–3,48 libras( 1,5 kg-1,58 kg*)
+
+*Varía según el SKU
+
+
+ASUS ROG Zephyrus G16 ( GU606)
+
+Sistema operativo
+
+Hasta Windows 11 Pro o Windows 11 Home, varía según el modelo.
+
+Mostrar
+
+ROG Nebula HDR, 16" 16:10 OLED 2.5K (2560x1600) 2.5K 240Hz, DCI-P3 100%, 0.2ms, 1100 nits (pico), Delta E 1 (+/- 0.5), VESA DisplayHDR ™ True Black 1000
+
+UPC
+
+Procesador Intel® Core™ Ultra 9 386H
+
+GPU
+
+Hasta una GPU para portátil NVIDIA® GeForce RTX ™ 5080
+
+Memoria
+
+Memoria integrada LPDDR5X-8533MT/s de hasta 64 GB (memoria de doble canal).
+
+Almacenamiento
+
+2 unidades SSD M.2 2280 PCIe® Gen 4, hasta 1 TB incluidas
+
+Puertos de E/S
+
+1 puerto Thunderbolt ™ 4 compatible con DP2.1 (20G) + PD3.0 (100W)
+
+1 puerto USB 3.2 Gen2 Tipo-C® compatible con DP2.1 (BD.1: 20G, BD.2: 10G) + PD3.0 (100W)
+
+2 puertos USB 3.2 Gen2 tipo A
+
+1 x HDMI ® 2.1
+
+1 lector de tarjetas SD (UHS-II)
+
+1 conector de audio
+
+Teclado y panel táctil
+
+RGB de 1 zona, recorrido de tecla: 1,7 mm
+
+Inalámbrico
+
+WiFi 7, Bluetooth ® 6.0
+
+Audio
+
+6 altavoces: 2 tweeters , 4 woofers
+
+Batería
+
+Batería de 4 celdas y 90 Wh, 4S1P
+
+Adaptador de CA
+
+250 W
+
+Chasis
+
+Aluminio mecanizado por CNC
+
+Dimensión
+
+13,94 × 9,69 × 0,59–0,65 pulgadas ( 35,4 x 24,6 x 1,49~1,64 cm)
+
+Peso
+
+4,30 lb (1,85 kg)
+
+Acerca de ROG
+
+Republic of Gamers (ROG) es una sub-marca de ASUS dedicada a crear el mejor hardware y software para videojuegos del mundo. Fundada en 2006, ROG ofrece una línea completa de productos innovadores, reconocidos por su rendimiento y calidad, incluyendo placas base, tarjetas gráficas, portátiles, ordenadores de sobremesa, monitores, equipos de audio, routers y periféricos. ROG participa y patrocina importantes eventos internacionales de videojuegos. Los productos ROG se han utilizado para establecer cientos de récords de overclocking y siguen siendo la opción preferida de jugadores y entusiastas de todo el mundo. Descubre más sobre la elección de los campeones en http://rog.asus.com .

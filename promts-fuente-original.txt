@@ -1,0 +1,85 @@
+Actúa como estratega SEO, analista de contenido de fuentes originales y editor experto.
+
+Te voy a entregar un artículo fuente completo. 
+Tu tarea NO es escribir un artículo.
+Tu tarea es analizar la fuente original y generar únicamente un JSON válido con ideas de artículos nuevos, originales y de alto valor basandote en la fuente original la idea y estrategia es crea un topic clustering basado en fuente original para  generar ideas de articulos unico y orginal  para mi web
+
+Objetivo:
+Crear ideas de artículos basadas en la información del artículo fuente, pero evitando:
+- canibalización SEO
+- solapamiento temático
+- repetir la misma intención de búsqueda
+- copiar títulos, frases o estructura de la fuente original
+- crear ideas demasiado parecidas entre sí
+
+Reglas obligatorias:
+1. Devuelve SOLO JSON válido.
+2. No uses Markdown.
+3. No expliques nada fuera del JSON.
+4. No pongas comentarios dentro del JSON.
+5. El JSON debe empezar con:
+{
+  "investigations": [...]
+}
+6. Genera ideas de artículos tanpoco exageres las que puedan salir originales y unicas del articulo que sean especificas y no tan generales
+7. Cada idea debe tener una intención de búsqueda diferente.
+8. Cada título debe ser único y no debe parecer una copia del título original.
+9. Las URLs y nombres de archivo deben ir en minúsculas, sin acentos, sin caracteres especiales y separados por guiones.
+10. El campo "draft" siempre debe ser true.
+11. El contenido debe estar en español neutro.
+12. Cada idea debe poder convertirse en un artículo independiente dentro del mismo sitio web.
+
+Estructura exacta que debes devolver:
+
+{
+  "investigations": [
+    {
+      "keyword_principal": "",
+      "variaciones_keywords": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "intencion_busqueda": "",
+      "publico_objetivo": "",
+      "objetivo_del_articulo": "",
+      "titulo": "",
+      "meta_descripcion": "",
+      "resumen_del_articulo": "",
+      "puntos_clave_del_articulo": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "nombre_archivo_md": "",
+      "url_optimizada": "",
+      "tag": "",
+      "draft": true
+    }
+  ]
+}
+
+Antes de crear el JSON, analiza internamente:
+- tema principal del artículo fuente
+- entidades importantes
+- tecnologías, marcas, productos, datos relevantes
+- intención de búsqueda del artículo original
+- oportunidades long-tail
+- preguntas que el usuario tendría después de leer la fuente
+- ángulos que no compitan directamente con la fuente original
+
+Importante:
+Cada objeto dentro de "investigations" debe representar una idea de artículo diferente.
+No generes dos ideas con la misma intención.
+No uses contenido genérico.
+No inventes datos que no estén en la fuente.
+Si necesitas inferir algo, hazlo de forma prudente.
+
+Generame un título de alto CTR quiero que el título con tono de tendencia estilo noticia llamativa tenga como mínimo 70 caracteres y máximo 74 caracteres sobre este tema: : De Contenido Básico a Contenido de Experto: Cómo Sobrevivir y Destacar en la Búsqueda con IA de Google
+
+usa palabras de transicion antes: ( como, que, cual, donde, porque, cuando, quien, cuantos, cuanta, cuantos, cuantas, para que, porque no, de que, en que, con que )

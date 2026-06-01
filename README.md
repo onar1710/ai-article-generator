@@ -100,6 +100,7 @@ Si la ejecutas sin argumentos, abre un menú interactivo:
 
 - (1) Analizar un artículo del sitio y guardar investigación JSON en `./out/`
 - (2) Generar artículos desde una investigación JSON existente en `./out/`
+- (3) Analizar una fuente original (`.txt`) y generar un JSON con ideas en `./out/`
 
 ### Modo CLI: analizar un artículo (plan JSON)
 
@@ -134,6 +135,19 @@ Notas:
 - Puedes forzar de dónde sale el “formato” con:
   - `--blogContentDir "ruta"` (frontmatter real del proyecto)
   - `--noProjectFrontmatter` (usar `ejemplo-fromater/`)
+
+### Modo CLI: analizar una fuente original (.txt) y generar ideas (JSON)
+
+Genera un JSON con ideas de artículos a partir de un texto fuente (noticia/nota de prensa):
+
+```bash
+node src/generator.js analyze-source --input "fuente-original-analisis.txt" --lang es
+```
+
+Opcionales útiles:
+- `--output "ruta.json"` para elegir el nombre/ubicación del JSON
+- `--sourcePrompt "prompts/promts-fuente-original.txt"` para usar otro prompt
+- `--tag "Mi Tag"` para forzar una etiqueta (se pasa como constraint al modelo)
 
 ### Modo legacy: generar desde `.txt` (informacion-txt)
 

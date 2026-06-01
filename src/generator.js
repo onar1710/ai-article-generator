@@ -691,6 +691,9 @@ async function main() {
     const analysisPromptPath = args.analysisPrompt
       ? path.resolve(String(args.analysisPrompt))
       : path.join(promptsDirResolved, 'promts-analysis.txt');
+    const sourcePromptPath = args.sourcePrompt
+      ? path.resolve(String(args.sourcePrompt))
+      : path.join(promptsDirResolved, 'promts-fuente-original.txt');
     const articlePromptPath = args.prompt
       ? path.resolve(String(args.prompt))
       : path.join(promptsDirResolved, 'promts.txt');
@@ -704,6 +707,11 @@ async function main() {
     const articleInstructions = await readRequiredFile(
       articlePromptPath,
       `prompts/${path.basename(articlePromptPath)}`
+    );
+    console.log(`  📖 Leyendo prompt de fuente original (prompts/${path.basename(sourcePromptPath)})...`);
+    const sourceInstructions = await readRequiredFile(
+      sourcePromptPath,
+      `prompts/${path.basename(sourcePromptPath)}`
     );
 
     const outputDirFromPrompt = extractOutputDirFromGlobalInstructions(articleInstructions);
@@ -735,6 +743,7 @@ async function main() {
         const choice = await askChoice(rl, 'Selecciona una opción', [
           { key: '1', label: `Analizar artículo (.md) y guardar investigación (JSON) en ${outDirResolved}` },
           { key: '2', label: `Generar artículos desde una investigación (JSON) en ${outDirResolved}` },
+          { key: '3', label: `Analizar fuente original (.txt) y generar ideas (JSON) en ${outDirResolved}` },
           { key: '0', label: 'Salir' },
         ]);
 
@@ -855,9 +864,118 @@ async function main() {
           });
           args.outDir = resolveMdOutputDir(mdOutDir);
         }
+
+        if (choice === '3') {
+          const lang = await askChoice(rl, 'Idioma del contenido', [
+            { key: 'es', label: 'Español' },
+            { key: 'en', label: 'English' },
+          ]);
+          args.lang = lang;
+
+          const defaultSource = 'fuente-original-analisis.txt';
+          const inputPathRaw = await ask(rl, 'Ruta del artículo fuente (.txt)', { defaultValue: defaultSource });
+          const inputPath = path.resolve(String(inputPathRaw));
+
+          await fs.mkdir(outDirResolved, { recursive: true });
+          const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+          const outputPath = path.join(outDirResolved, `fuente-original-ideas-${stamp}.json`);
+
+          const maxTitleLen = 72;
+          const existingPosts = await summarizeExistingBlogPosts(repoRoot, blogContentDirResolved);
+
+          console.log(`\n▶ Analizando fuente original: ${inputPath}`);
+          const sourceText = await readRequiredFile(inputPath, 'fuente original');
+          const researchContent = JSON.stringify(
+            {
+              language: lang,
+              source: { path: inputPath, text: sourceText },
+              constraints: { maxTitleLength: maxTitleLen },
+              existingSitePosts: existingPosts.slice(0, 400),
+            },
+            null,
+            2
+          );
+
+          logPromptParts({ globalInstructions: sourceInstructions, formatterExamples, researchContent });
+          console.log('  🤖 Generando ideas (JSON)...');
+          const modelOutput = stripOuterMarkdownCodeFence(
+            await getAIClient().generate(
+              createMessages({ globalInstructions: sourceInstructions, formatterExamples, researchContent })
+            )
+          );
+          await fs.writeFile(outputPath, modelOutput, 'utf-8');
+          console.log(`  ✅ Ideas guardadas: ${outputPath}`);
+
+          const parsed = tryParseJsonFromModelOutput(modelOutput);
+          if (parsed.value) {
+            const issues = validatePlanTitles(parsed.value, maxTitleLen);
+            if (issues.length) {
+              console.log(`  ⚠️ Validación: ${issues.length} título(s) fuera de regla (max ${maxTitleLen})`);
+            }
+          } else {
+            console.log('  ⚠️ No pude validar títulos: el JSON no parece válido');
+          }
+
+          const go = await ask(rl, '¿Generar artículos ahora desde este JSON? (s/n)', { defaultValue: 'n' });
+          if (go.toLowerCase() !== 's') return;
+
+          const mdOutDir = await ask(rl, 'Directorio donde se guardarán los .md', {
+            defaultValue: outputDirFromPrompt || config.outputDir,
+          });
+          args.plan = outputPath;
+          args.outDir = resolveMdOutputDir(mdOutDir);
+        }
       } finally {
         rl.close();
       }
+    }
+
+    if (command === 'analyze-source') {
+      const inputPath = args.input ? path.resolve(String(args.input)) : null;
+      if (!inputPath) {
+        throw new Error('Falta --input con la ruta del artículo fuente .txt');
+      }
+      const outputPath = args.output
+        ? path.resolve(String(args.output))
+        : path.resolve(outDirResolved, `fuente-original-ideas-${path.basename(inputPath).replace(/\.txt$/i, '')}.json`);
+      const maxTitleLen = Number.isFinite(Number(args.maxTitleLen)) ? Number(args.maxTitleLen) : 72;
+
+      const existingPosts = await summarizeExistingBlogPosts(repoRoot, blogContentDirResolved);
+      const sourceText = await readRequiredFile(inputPath, 'fuente original');
+
+      const researchContent = JSON.stringify(
+        {
+          language: args.lang ? String(args.lang) : '',
+          source: { path: inputPath, text: sourceText },
+          constraints: { maxTitleLength: maxTitleLen, singleTagForAllNewArticles: args.tag ? String(args.tag).trim() : '' },
+          existingSitePosts: existingPosts.slice(0, 400),
+        },
+        null,
+        2
+      );
+
+      logPromptParts({ globalInstructions: sourceInstructions, formatterExamples, researchContent });
+      console.log('  🤖 Generando ideas (JSON)...');
+      const messages = createMessages({ globalInstructions: sourceInstructions, formatterExamples, researchContent });
+      const modelOutput = stripOuterMarkdownCodeFence(await getAIClient().generate(messages));
+
+      console.log('  💾 Guardando ideas...');
+      await fs.mkdir(path.dirname(outputPath), { recursive: true });
+      await fs.writeFile(outputPath, modelOutput, 'utf-8');
+      console.log(`  ✅ Ideas guardadas: ${outputPath}`);
+
+      const parsed = tryParseJsonFromModelOutput(modelOutput);
+      if (parsed.value) {
+        const issues = validatePlanTitles(parsed.value, maxTitleLen);
+        if (issues.length) {
+          console.log(`  ⚠️ Validación: ${issues.length} título(s) fuera de regla (max ${maxTitleLen})`);
+        }
+      } else {
+        console.log('  ⚠️ No pude validar títulos: el JSON no parece válido');
+      }
+
+      console.log('\n✨ Proceso completado\n');
+      return;
     }
 
     if (command === 'analyze') {
