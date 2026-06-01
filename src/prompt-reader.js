@@ -1,9 +1,9 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { config } from './config.js';
+import { getConfig } from './config.js';
 
 export class PromptReader {
-  constructor(promptsDir = config.promptsDir) {
+  constructor(promptsDir = getConfig().promptsDir) {
     this.promptsDir = promptsDir;
   }
 

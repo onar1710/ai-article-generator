@@ -1,7 +1,7 @@
 import { AIClient } from './ai-client.js';
 import { PromptReader } from './prompt-reader.js';
 import { FileGenerator } from './file-generator.js';
-import { getConfig } from './config.js';
+import { getConfig, reloadEnv } from './config.js';
 import crypto from 'crypto';
 import fs from 'fs/promises';
 import path from 'path';
@@ -632,6 +632,7 @@ function pickBaseName(item, fallbackTitle, index) {
 }
 
 async function main() {
+  reloadEnv();
   const argv = process.argv.slice(2);
   const args = parseArgs(argv);
   const config = getConfig();

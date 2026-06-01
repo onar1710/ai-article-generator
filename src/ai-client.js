@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { getConfig } from './config.js';
+import { getConfig, reloadEnv } from './config.js';
 
 export class AIClient {
   constructor({ purpose } = {}) {
+    reloadEnv();
     this.purpose = purpose ? String(purpose) : '';
     const config = getConfig({ purpose: this.purpose });
     this.provider = config.provider;

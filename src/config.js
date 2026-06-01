@@ -1,6 +1,10 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+export function reloadEnv({ override = true } = {}) {
+  dotenv.config({ override });
+}
+
 function parseBooleanEnv(value) {
   const v = String(value ?? '').trim().toLowerCase();
   return v === '1' || v === 'true' || v === 'yes' || v === 'y' || v === 'on';

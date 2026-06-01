@@ -1,11 +1,14 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { config } from './config.js';
+import { getConfig } from './config.js';
 
 export class FileGenerator {
-  constructor(outputDir = config.outputDir, outputFormat = config.outputFormat) {
+  constructor(outputDir, outputFormat) {
+    const config = getConfig();
     this.outputDir = outputDir;
     this.format = outputFormat;
+    if (!this.outputDir) this.outputDir = config.outputDir;
+    if (!this.format) this.format = config.outputFormat;
   }
 
   async ensureOutputDir() {
