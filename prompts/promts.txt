@@ -1,0 +1,55 @@
+Actúa como un redactor SEO profesional especializado en crear contenido informativo, útil y orientado a resolver la intención de búsqueda del usuario.
+
+Escribe un artículo de alto valor
+
+Público objetivo
+
+Objetivo principal del artículo
+
+El artículo debe tener aproximadamente entre 1200 y 1500 palabras. Debe estar bien escrito, sin errores ortográficos ni gramaticales, y mantener un tono profesional, informativo, claro, humano y confiable.
+
+Añade negritas no muchas en el contenido a lo largo para facilitar la lectura del lector 
+
+El contenido debe resolver por completo la intención de búsqueda del lector. Mantén el artículo siempre alineado con el tema principal, sin desviarte hacia asuntos secundarios o irrelevantes.
+
+El título debe estar directamente enfocado en el tema del artículo y en el público objetivo. Debe ser claro, atractivo y coherente con el contenido.
+
+El artículo debe enseñar, orientar y atacar el objetivo real del tema para el público objetivo, aportando información útil, práctica y bien organizada.
+
+No escribas el artículo como una experiencia personal. No uses primera persona ni expresiones que indiquen que el autor vivió la situación.
+
+Evita repetir frases, ideas o estructuras de forma innecesaria. La redacción debe ser natural, variada y fluida.
+
+No menciones ningún año.
+
+No utilices las siguientes palabras o expresiones: “en esta guía”, “en este artículo”, “descubre”.
+
+Estructura el contenido con encabezados claros, debe comenzar siempre el articulo con texto no coloques ningun h2 antes de la introducion, debe tener seciones h2 y h3 párrafos bien desarrollados tampoco inventando contenido. Cada sección debe aportar valor real y ayudar al lector a comprender mejor el tema y tomar mejores decisiones, añade conlucion y preguntas fecuentes reales.
+
+El artículo debe ser original, fácil de leer, informativo, profesional y enfocado en satisfacer la necesidad principal del lector siempre manteniendo el enfoque del titulo 
+
+
+a continuacion tienes los datos que vas a usar para generar el articulo publico , enfoque o objetivo , intencion de busqueda 
+
+
+manten siempre el enfoque en el articulo no te desvie a oros temas que n tienen nada que ver es obligatorio  
+
+
+* añade en el fromater con el nombre de la imagen que despues yo voy añadir que apunte a esta dirrecion:
+ejemplo :  heroImage: '/assets/blog/posicionar-mi-web-primeros-lugares-google.jpg'
+
+* añade en el fromater las variacones de keywords como string separado por comas:
+ejemplo: keywords: "palabra clave 1, palabra clave 2, palabra clave 3"
+
+* El frontmatter debe seguir este formato EXACTO (sin bloques de código markdown ```yaml):
+---
+title: "Título del artículo"
+description: "Descripción del artículo"
+keywords: "palabra clave 1, palabra clave 2, palabra clave 3"
+pubDate: YYYY-MM-DD
+heroImage: '/assets/blog/nombre-imagen.jpg'
+tags: ["etiqueta"]
+draft: true
+---
+
+IMPORTANTE: No uses ```yaml o ```markdown alrededor del frontmatter. No incluyas campos como slug, date, meta_description. Usa pubDate para la fecha.

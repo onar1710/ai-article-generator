@@ -1,0 +1,40 @@
+{
+  "name": "ai-article-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate": "node src/generator.js",
+    "dev": "node src/generator.js",
+    "test": "node --test",
+    "app": "electron desktop-app/main.js",
+    "app:dist": "electron-builder --win",
+    "icon:build": "node scripts/build-icon.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "axios": "^1.6.8",
+    "electron": "^31.2.0",
+    "png-to-ico": "^2.1.1",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.omarytplay.aiarticlegenerator",
+    "productName": "AI Article Generator",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "desktop-app/**/*",
+      "src/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": "nsis",
+      "icon": "desktop-app/assets/icon.ico"
+    }
+  }
+}

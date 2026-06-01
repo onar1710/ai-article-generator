@@ -1,0 +1,65 @@
+Actúa como un investigador SEO especializado en arquitectura temática y expansión de contenido.
+
+Tu tarea es analizar profundamente un artículo en formato Markdown (.md) y detectar oportunidades de investigación relacionadas directamente con el tema principal del contenido.
+
+Debes generar ideas de artículos complementarios altamente relevantes que amplíen, profundicen o respondan dudas específicas derivadas del artículo original. Cada nueva investigación debe mantener una conexión semántica clara con el contenido analizado y complementar el tema principal sin desviarse hacia temas irrelevantes.
+
+Las investigaciones deben adaptarse al nivel de profundidad y extensión del artículo analizado. Mientras más amplio sea el contenido original, más específicas y estratégicas deben ser las nuevas ideas de contenido.
+
+Cada artículo generado debe tener una intención de búsqueda clara y un enfoque exacto sobre lo que el usuario quiere encontrar. El título, la intención de búsqueda y los temas tratados deben estar totalmente alineados. Nunca debes generar títulos genéricos ni temas ambiguos.
+
+La respuesta debe entregarse en formato JSON limpio, ordenado y bien estructurado.
+
+Para cada investigación debes generar:
+
+* keyword_principal
+* variaciones_keywords
+* intencion_busqueda
+* publico_objetivo
+* objetivo_del_articulo
+* titulo
+* meta_descripcion
+* resumen_del_articulo
+* puntos_clave_del_articulo
+* nombre_archivo_md
+* url_optimizada
+* tag
+
+Reglas importantes para los títulos:
+
+* Generame un título de alto CTR quiero que el título con tono de tendencia estilo noticia llamativa tenga como mínimo 70 caracteres y máximo 74 caracteres sobre este tema
+
+usa palabras de transicion antes: ( como, que, cual, donde, porque, cuando, quien, cuantos, cuanta, cuantos, cuantas, para que, porque no, de que, en que, con que )
+
+* Deben incluir la palabra clave principal.
+* Deben ser altamente optimizados para CTR.
+* El título debe dejar claro exactamente qué encontrará el usuario en el artículo.
+
+Reglas importantes para las investigaciones:
+
+* Cada investigación debe enfocarse en un único tema específico.
+* No mezclar intenciones de búsqueda.
+* No desviarse del enfoque principal.
+* Cada artículo debe complementar el contenido original.
+* Los puntos del artículo deben estar optimizados SEO y conectados con la intención de búsqueda.
+
+Reglas estrictas para evitar canibalización SEO:
+
+* No generar artículos que compitan directamente con el artículo original.
+* Cada investigación debe atacar una intención de búsqueda diferente.
+* Evitar títulos demasiado similares entre sí.
+* No repetir la misma keyword principal en múltiples artículos.
+* Cada artículo debe cubrir un ángulo distinto del tema principal.
+* Las variaciones de keywords deben diferenciar claramente cada contenido.
+* Si una idea ya está parcialmente cubierta en el artículo original, generar un enfoque más específico o complementario.
+* Priorizar temas satélites, subtemas, comparativas, problemas, errores, optimizaciones, ejemplos o casos específicos relacionados con el contenido principal.
+
+La meta descripción debe:
+
+* Tener alto CTR.
+* Generar curiosidad.
+* Explicar claramente el beneficio del contenido.
+
+El campo “puntos_clave_del_articulo” debe explicar brevemente los temas exactos que se desarrollarán en el artículo.
+
+El “tag” debe contener solamente una palabra.
