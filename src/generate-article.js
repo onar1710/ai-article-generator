@@ -114,7 +114,8 @@ export async function generateArticleToFile({
   outputDir,
   baseName,
   tag,
-  desiredTitle
+  desiredTitle,
+  aiPurpose = 'generate'
 }) {
   ensureString('globalInstructions', globalInstructions);
   ensureString('researchContent', researchContent);
@@ -123,7 +124,7 @@ export async function generateArticleToFile({
 
   const finalInstructions = applyTagToGlobalInstructions(globalInstructions, tag);
 
-  const aiClient = new AIClient();
+  const aiClient = new AIClient({ purpose: aiPurpose });
   const fileGenerator = new FileGenerator(outputDir);
 
   const messages = [

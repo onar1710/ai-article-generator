@@ -735,7 +735,7 @@ async function main() {
       formatterExamples = await readAllFilesInDir(formatterDirResolved);
     }
 
-    const getAIClient = () => new AIClient();
+    const getAIClient = (purpose) => new AIClient({ purpose });
 
     if (argv.length === 0) {
       const rl = readline.createInterface({ input: stdinInput, output: stdoutOutput });
@@ -811,7 +811,7 @@ async function main() {
           logPromptParts({ globalInstructions: analysisInstructions, formatterExamples: effectiveFormatterExamplesForAnalysis, researchContent });
           console.log('  🤖 Generando análisis/plan...');
           const modelOutput = stripOuterMarkdownCodeFence(
-            await getAIClient().generate(
+            await getAIClient('analysis').generate(
               createMessages({ globalInstructions: analysisInstructions, formatterExamples: effectiveFormatterExamplesForAnalysis, researchContent })
             )
           );
@@ -899,7 +899,7 @@ async function main() {
           logPromptParts({ globalInstructions: sourceInstructions, formatterExamples, researchContent });
           console.log('  🤖 Generando ideas (JSON)...');
           const modelOutput = stripOuterMarkdownCodeFence(
-            await getAIClient().generate(
+            await getAIClient('source').generate(
               createMessages({ globalInstructions: sourceInstructions, formatterExamples, researchContent })
             )
           );
@@ -957,7 +957,7 @@ async function main() {
       logPromptParts({ globalInstructions: sourceInstructions, formatterExamples, researchContent });
       console.log('  🤖 Generando ideas (JSON)...');
       const messages = createMessages({ globalInstructions: sourceInstructions, formatterExamples, researchContent });
-      const modelOutput = stripOuterMarkdownCodeFence(await getAIClient().generate(messages));
+      const modelOutput = stripOuterMarkdownCodeFence(await getAIClient('source').generate(messages));
 
       console.log('  💾 Guardando ideas...');
       await fs.mkdir(path.dirname(outputPath), { recursive: true });
@@ -1020,7 +1020,7 @@ async function main() {
 
       console.log('  🤖 Generando análisis/plan...');
       const messages = createMessages({ globalInstructions: analysisInstructions, formatterExamples: effectiveFormatterExamplesForAnalysis, researchContent });
-      const modelOutput = stripOuterMarkdownCodeFence(await getAIClient().generate(messages));
+      const modelOutput = stripOuterMarkdownCodeFence(await getAIClient('analysis').generate(messages));
 
       console.log('  💾 Guardando plan...');
       await fs.mkdir(path.dirname(outputPath), { recursive: true });
@@ -1108,7 +1108,7 @@ async function main() {
 
         console.log('  🤖 Generando artículo...');
         const messages = createMessages({ globalInstructions: articleInstructions, formatterExamples: effectiveFormatterExamples, researchContent });
-        const generated = sanitizeForMdx(stripYamlCodeFenceAroundFrontmatter(stripOuterMarkdownCodeFence(await getAIClient().generate(messages))));
+        const generated = sanitizeForMdx(stripYamlCodeFenceAroundFrontmatter(stripOuterMarkdownCodeFence(await getAIClient('generate').generate(messages))));
         const keywords = pickKeywords(item);
         const article = enforceRequiredFrontmatter(enforceDraft(enforceTitle(generated, desiredTitle), true), {
           title: desiredTitle,
@@ -1151,7 +1151,7 @@ async function main() {
         console.log('  🤖 Generando artículo...');
         const messages = createMessages({ globalInstructions: articleInstructions, formatterExamples, researchContent });
         const article = enforceDraft(
-          enforceTitle(sanitizeForMdx(stripYamlCodeFenceAroundFrontmatter(stripOuterMarkdownCodeFence(await getAIClient().generate(messages)))), desiredTitle),
+          enforceTitle(sanitizeForMdx(stripYamlCodeFenceAroundFrontmatter(stripOuterMarkdownCodeFence(await getAIClient('generate').generate(messages)))), desiredTitle),
           true
         );
 
@@ -1185,7 +1185,7 @@ async function main() {
           console.log('  🤖 Generando artículo...');
           const messages = createMessages({ globalInstructions: articleInstructions, formatterExamples, researchContent });
           const article = enforceDraft(
-            enforceTitle(sanitizeForMdx(stripYamlCodeFenceAroundFrontmatter(stripOuterMarkdownCodeFence(await getAIClient().generate(messages)))), desiredTitle),
+            enforceTitle(sanitizeForMdx(stripYamlCodeFenceAroundFrontmatter(stripOuterMarkdownCodeFence(await getAIClient('generate').generate(messages)))), desiredTitle),
             true
           );
 

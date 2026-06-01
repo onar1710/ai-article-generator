@@ -66,6 +66,15 @@ GROK_API_KEY=tu_key
 KIMI_API_KEY=tu_key
 MIMO_API_KEY=tu_key
 
+# Opcional: usar modelos/proveedores distintos por función
+# Funciones: ANALYSIS (analyze), SOURCE (analyze-source), GENERATE (generate-plan y generación normal)
+AI_PROVIDER_ANALYSIS=grok
+AI_MODEL_ANALYSIS=
+AI_PROVIDER_SOURCE=mimo
+AI_MODEL_SOURCE=mimo-v2.5-pro
+AI_PROVIDER_GENERATE=mimo
+AI_MODEL_GENERATE=mimo-v2.5-pro
+
 # Opcionales (model/temperature/tokens)
 GROK_MODEL=grok-beta
 GROK_TEMPERATURE=1.0

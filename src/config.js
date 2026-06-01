@@ -6,8 +6,8 @@ function parseBooleanEnv(value) {
   return v === '1' || v === 'true' || v === 'yes' || v === 'y' || v === 'on';
 }
 
-export function getConfig() {
-  const rawProvider = String(process.env.AI_PROVIDER || 'grok').trim().toLowerCase();
+function normalizeProvider(raw) {
+  const rawProvider = String(raw || 'grok').trim().toLowerCase();
   const provider =
     rawProvider === 'grok' || rawProvider.startsWith('grok-') || rawProvider.startsWith('xai')
       ? 'grok'
@@ -16,9 +16,45 @@ export function getConfig() {
         : rawProvider === 'mimo' || rawProvider.startsWith('mimo')
           ? 'mimo'
           : rawProvider;
+  return { rawProvider, provider };
+}
 
+function parseNumberEnv(value) {
+  const n = Number(String(value ?? '').trim());
+  return Number.isFinite(n) ? n : null;
+}
+
+function applyPurposeOverrides(config, purpose) {
+  const p = String(purpose ?? '').trim().toUpperCase();
+  if (!p) return config;
+
+  const providerOverrideRaw = process.env[`AI_PROVIDER_${p}`];
+  const providerOverride = providerOverrideRaw ? normalizeProvider(providerOverrideRaw).provider : '';
+  const provider = providerOverride || config.provider;
+
+  const modelOverride = process.env[`AI_MODEL_${p}`];
+  const temperatureOverride = parseNumberEnv(process.env[`AI_TEMPERATURE_${p}`]);
+  const maxTokensOverride = parseNumberEnv(process.env[`AI_MAX_TOKENS_${p}`]);
+  const timeoutMsOverride = parseNumberEnv(process.env[`AI_TIMEOUT_MS_${p}`]);
+
+  const out = { ...config, provider };
+  if (out[provider] && typeof out[provider] === 'object') {
+    out[provider] = {
+      ...out[provider],
+      model: typeof modelOverride === 'string' && modelOverride.trim() ? String(modelOverride).trim() : out[provider].model,
+      temperature: typeof temperatureOverride === 'number' ? temperatureOverride : out[provider].temperature,
+      maxTokens: typeof maxTokensOverride === 'number' ? Math.trunc(maxTokensOverride) : out[provider].maxTokens,
+      timeoutMs: typeof timeoutMsOverride === 'number' ? Math.trunc(timeoutMsOverride) : out[provider].timeoutMs
+    };
+  }
+
+  return out;
+}
+
+export function getConfig({ purpose } = {}) {
+  const { rawProvider, provider } = normalizeProvider(process.env.AI_PROVIDER || 'grok');
   const mimoModel = process.env.MIMO_MODEL || (provider === 'mimo' && rawProvider !== 'mimo' ? rawProvider : '') || 'MiMo-V2.5';
-  return {
+  const base = {
     provider,
     outputFormat: String(process.env.OUTPUT_FORMAT || 'mdx').trim().toLowerCase(),
     promptsDir: process.env.PROMPTS_DIR || './prompts',
@@ -54,6 +90,8 @@ export function getConfig() {
       endpoint: 'https://token-plan-sgp.xiaomimimo.com/v1/chat/completions'
     }
   };
+
+  return applyPurposeOverrides(base, purpose);
 }
 
 // Backwards-compat: existing CLI imports `config` as a constant snapshot.

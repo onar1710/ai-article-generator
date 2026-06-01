@@ -11,8 +11,8 @@
     "icon:build": "node scripts/build-icon.js"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
     "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
     "electron": "^31.2.0",
     "png-to-ico": "^2.1.1",
     "sharp": "^0.33.4"

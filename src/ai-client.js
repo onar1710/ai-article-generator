@@ -2,8 +2,9 @@ import axios from 'axios';
 import { getConfig } from './config.js';
 
 export class AIClient {
-  constructor() {
-    const config = getConfig();
+  constructor({ purpose } = {}) {
+    this.purpose = purpose ? String(purpose) : '';
+    const config = getConfig({ purpose: this.purpose });
     this.provider = config.provider;
     this.providerConfig = config[this.provider];
 
