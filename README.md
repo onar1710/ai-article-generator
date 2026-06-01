@@ -39,9 +39,6 @@ npm install
 Copia `.env.example` a `.env` dentro de `ai-article-generator/` y completa tus keys:
 
 ```env
-# Proveedor: grok | kimi | mimo
-AI_PROVIDER=grok
-
 # Salida de archivos: md o mdx
 OUTPUT_FORMAT=mdx
 
@@ -66,14 +63,19 @@ GROK_API_KEY=tu_key
 KIMI_API_KEY=tu_key
 MIMO_API_KEY=tu_key
 
-# Opcional: usar modelos/proveedores distintos por función
-# Funciones: ANALYSIS (analyze), SOURCE (analyze-source), GENERATE (generate-plan y generación normal)
-AI_PROVIDER_ANALYSIS=grok
+# Proveedor/modelo por función (recomendado)
+# ANALYSIS = opción (1) y comando "analyze"
+AI_PROVIDER_ANALYSIS=
 AI_MODEL_ANALYSIS=
-AI_PROVIDER_SOURCE=mimo
-AI_MODEL_SOURCE=mimo-v2.5-pro
-AI_PROVIDER_GENERATE=mimo
-AI_MODEL_GENERATE=mimo-v2.5-pro
+# SOURCE = opción (3) y comando "analyze-source"
+AI_PROVIDER_SOURCE=
+AI_MODEL_SOURCE=
+# GENERATE = generación de artículos
+AI_PROVIDER_GENERATE=
+AI_MODEL_GENERATE=
+
+# Fallback (si NO pones los de arriba)
+AI_PROVIDER=grok
 
 # Opcionales (model/temperature/tokens)
 GROK_MODEL=grok-beta
